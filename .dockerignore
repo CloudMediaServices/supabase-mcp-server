@@ -1,0 +1,109 @@
+# Docker ignore file for Supabase MCP Server
+# Excludes files and directories from Docker build context
+
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+PLANNING.md
+TASK.md
+GLOBAL_RULES.md
+
+# Environment files (will be handled via docker-compose)
+.env
+.env.*
+!.env.example
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+ENV/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Test files and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Docker files (these are used for build but not needed in container)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Scripts (not needed in container)
+scripts/
+
+# Backup files
+*.bak
+*.backup
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Development files
+.pre-commit-config.yaml
+mypy.ini
+setup.cfg
+tox.ini
+
+# Package files
+*.tar.gz
+*.zip
+
+# Editor files
+.vimrc
+.emacs*
+
+# Local configuration
+local_config.py
+config.local.py
