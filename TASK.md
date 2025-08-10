@@ -460,6 +460,31 @@ Create comprehensive GitHub repository setup and SSH deployment documentation wi
 - `SSH_QUICK_DEPLOY.md` - Quick reference for rapid deployment
 - Updated `README.md` with deployment documentation links
 
+### New Task: Port Configuration Change to 8085 ✅ COMPLETED
+**Priority**: Medium | **Estimated Time**: 1 hour | **Completed**: August 09, 2025
+
+#### Description:
+Update MCP server configuration to run on port 8085 instead of port 8080 for deployment flexibility and to avoid common port conflicts.
+
+#### Completed Work:
+- [x] Updated docker-compose.mcp-only.yml port mapping (8085:8000)
+- [x] Updated docker-compose.yml port mapping for full stack deployment
+- [x] Updated all documentation references (README.md, DEPLOYMENT.md, GITHUB_SETUP.md)
+- [x] Updated deployment script output messages
+- [x] Updated firewall configuration instructions
+- [x] Updated troubleshooting examples
+- [x] Updated load balancer configuration examples
+- [x] Updated SSH deployment quick reference
+
+#### Files Modified:
+- `docker-compose.mcp-only.yml` - Changed port mapping from 8080:8000 to 8085:8000
+- `docker-compose.yml` - Added port mapping 8085:8000 for consistency
+- `README.md` - Updated access information
+- `DEPLOYMENT.md` - Updated all port references and examples
+- `GITHUB_SETUP.md` - Updated deployment instructions and access URLs
+- `SSH_QUICK_DEPLOY.md` - Updated firewall and access information
+- `scripts/deploy.sh` - Updated success message with correct port
+
 ### New Task: Security Hardening
 **Priority**: High | **Estimated Time**: 4 hours
 

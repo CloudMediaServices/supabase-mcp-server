@@ -51,7 +51,7 @@ This guide covers deploying the Supabase MCP Server to your cloud Docker instanc
 - Docker Compose 2.0+
 - 2GB+ RAM
 - 10GB+ disk space
-- Open ports: 8080 (MCP), 3000 (Studio), 8000 (API)
+- Open ports: 8085 (MCP), 3000 (Studio), 8000 (API)
 
 ### Install Docker (if needed)
 ```bash
@@ -88,12 +88,12 @@ LOG_LEVEL=INFO
 Open required ports:
 ```bash
 # Ubuntu/Debian with UFW
-sudo ufw allow 8080/tcp  # MCP Server
+sudo ufw allow 8085/tcp  # MCP Server
 sudo ufw allow 3000/tcp  # Supabase Studio (if using full stack)
 sudo ufw allow 8000/tcp  # Supabase API (if using full stack)
 
 # CentOS/RHEL with firewalld
-sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --permanent --add-port=8085/tcp
 sudo firewall-cmd --permanent --add-port=3000/tcp
 sudo firewall-cmd --permanent --add-port=8000/tcp
 sudo firewall-cmd --reload
@@ -114,7 +114,7 @@ docker-compose -f docker-compose.mcp-only.yml ps
 docker-compose -f docker-compose.mcp-only.yml logs mcp-server
 ```
 
-**Access**: MCP server available on port 8080
+**Access**: MCP server available on port 8085
 
 ### Option B: Full Stack Deployment
 Includes self-hosted Supabase components:
@@ -132,7 +132,7 @@ docker-compose ps
 ```
 
 **Access**:
-- MCP Server: Port 8080
+- MCP Server: Port 8085
 - Supabase Studio: http://your-server.com:3000
 - Supabase API: http://your-server.com:8000
 
@@ -271,11 +271,11 @@ chmod +x backup.sh
 2. **Port conflicts**:
    ```bash
    # Check what's using the port
-   sudo netstat -tulpn | grep :8080
+   sudo netstat -tulpn | grep :8085
    
    # Change port in docker-compose.yml
    ports:
-     - "8081:8000"  # Use 8081 instead of 8080
+     - "8086:8000"  # Use 8086 instead of 8085
    ```
 
 3. **Permission issues**:
@@ -322,9 +322,9 @@ sudo apt install nginx
 
 # Configure upstream in /etc/nginx/sites-available/mcp-server
 upstream mcp_servers {
-    server localhost:8080;
-    server localhost:8081;
-    server localhost:8082;
+    server localhost:8085;
+    server localhost:8086;
+    server localhost:8087;
 }
 
 server {

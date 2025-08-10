@@ -158,7 +158,7 @@ docker ps
 docker-compose -f docker-compose.mcp-only.yml logs mcp-server
 
 # Check server health
-curl -f http://localhost:8080/health || echo "Health endpoint not available (normal for MCP servers)"
+curl -f http://localhost:8085/health || echo "Health endpoint not available (normal for MCP servers)"
 
 # Monitor resource usage
 docker stats --no-stream
@@ -167,8 +167,8 @@ docker stats --no-stream
 ### Step 6: Configure Firewall (Important!)
 
 ```bash
-# Open port 8080 for MCP server
-sudo ufw allow 8080/tcp
+# Open port 8085 for MCP server
+sudo ufw allow 8085/tcp
 
 # If using full stack, also open:
 sudo ufw allow 3000/tcp  # Supabase Studio
@@ -272,8 +272,8 @@ docker-compose up -d
 ### For AI Client Integration
 
 Your MCP server is now accessible at:
-- **Internal**: `http://localhost:8080`
-- **External**: `http://YOUR_SERVER_IP:8080`
+- **Internal**: `http://localhost:8085`
+- **External**: `http://YOUR_SERVER_IP:8085`
 
 ### Claude Desktop Configuration Example
 
@@ -302,7 +302,7 @@ npx @modelcontextprotocol/inspector ssh username@YOUR_SERVER_IP docker exec supa
 
 ### Common Issues
 
-1. **Port 8080 not accessible**:
+1. **Port 8085 not accessible**:
    ```bash
    sudo ufw status  # Check firewall
    docker ps        # Check if container is running
@@ -340,7 +340,7 @@ After deployment, you should have:
 
 - ✅ GitHub repository with your code
 - ✅ MCP server running on your cloud instance
-- ✅ Port 8080 accessible (verify with `curl http://YOUR_SERVER_IP:8080`)
+- ✅ Port 8085 accessible (verify with `curl http://YOUR_SERVER_IP:8085`)
 - ✅ Container healthy and logging properly
 - ✅ Firewall configured correctly
 - ✅ Environment variables set properly

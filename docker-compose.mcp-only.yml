@@ -19,7 +19,7 @@ services:
     volumes:
       - ./logs:/app/logs
     ports:
-      - "8080:8000"  # Map port 8080 on host to port 8000 in container
+      - "8085:8000"  # Map port 8085 on host to port 8000 in container
     networks:
       - mcp-network
     healthcheck:

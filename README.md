@@ -149,7 +149,7 @@ docker-compose -f docker-compose.mcp-only.yml up -d
 docker-compose up -d
 ```
 
-**Access**: Server available on port 8080
+**Access**: Server available on port 8085
 
 📖 **[Complete Deployment Guide](DEPLOYMENT.md)** - Includes security, monitoring, scaling, and troubleshooting
 
